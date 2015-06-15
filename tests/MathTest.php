@@ -35,4 +35,31 @@ final class MathTest extends \PHPUnit_Framework_TestCase
 	public function multiply_nonNumericInput() {
 		Math::multiply('a', 5);
 	}
+	
+	/** 
+	 * Verify basic behavior of sub()
+	 * @test
+	 * @covers ::sub
+	 *
+	 * @return void
+	 */
+	public function sub()
+	{
+		$this->assertSame(1, Math::sub(3,2), 'Math:sub() did not return 1 for inputs 3 and 2');
+	}
+
+	/**
+	 * Verify behavior of sub() when $x or $y are not integers
+	 *
+	 * @test
+	 * @covers ::sub
+	 * @expectedException \InvalidArgumentException
+	 * @expectedExceptionMessage $x and $y must be integers
+	 *
+	 * @return void
+	 */
+	public function sub_notInteger()
+	{
+		Math::sub(3.5, 2);	
+	}
 }
