@@ -8,5 +8,8 @@
     },
     "autoload": {
         "psr-4" : {"Chadicus\\" : "src"}
+    },
+    "autoload-dev": {
+        "psr-4" : {"ChadicusTest\\" : "tests"}
     }
 }
