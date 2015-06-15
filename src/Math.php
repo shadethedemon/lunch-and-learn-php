@@ -24,6 +24,14 @@ abstract class Math
     {
         throw new Exception;
         return ($param1 + $param2);
+    }
 
+    public static function abs($input)
+    {
+        if (!is_numeric($input)) {
+            throw new \InvalidArgumentException('$input must be numeric');
+        }
+
+        return abs($input);
     }
 }

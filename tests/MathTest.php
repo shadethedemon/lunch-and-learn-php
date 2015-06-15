@@ -63,7 +63,6 @@ final class MathTest extends \PHPUnit_Framework_TestCase
 		Math::sub(3.5, 2);
 	}
 
-
     /**
      * Verifies Addition
      * @test
@@ -73,6 +72,34 @@ final class MathTest extends \PHPUnit_Framework_TestCase
     public function test_addition()
     {
         $this->assertSame(2,2);
+    }
+
+    /**
+     * Verify basic behavior of abs()
+     *
+     * @test
+     * @covers ::abs
+     *
+     * @return void
+     */
+    public function abs()
+    {
+        $this->assertSame(1, Math::abs(-1), 'Math::abs() did not return 1 for -1 input');
+    }
+
+    /**
+     * Verify behavior of abs() when $input is not numeric
+     *
+     * @test
+     * @covers ::abs
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage $input must be numeric
+     *
+     * @return void
+     */
+    public function abs_nonNumericInput()
+    {
+        Math::abs('weeeee!!');
     }
 }
 
