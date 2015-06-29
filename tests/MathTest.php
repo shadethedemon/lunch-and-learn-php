@@ -13,6 +13,7 @@ final class MathTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * Verify basic behavior of multiply method
 	 *
+     * @test
 	 * @covers ::multiply
 	 *
 	 * return void
